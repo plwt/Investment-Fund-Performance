@@ -1,39 +1,46 @@
-# Investment Fund Performance
-
 import datetime
+from datetime import date
 
-def data():
+def getstartvalue():
 
-    startvalue = input("Enter the starting value of the investment: ")
-    endvalue = input("Enter the ending value of the investment: ")
+    startvalue = int(input("Enter the starting value of the investment: "))
+    return startvalue
+
+def getendvalue():
+
+    endvalue = int(input("Enter the end value of the investment: "))
+    return endvalue
+
+def getstartdate():
     
     date_entry = input('Enter the start date in DD-MM-YYYY format: ')
     year, month, day = map(int, date_entry.split('-'))
-    date1 = datetime.date(day, month, year)
+    startdate = datetime.date(day, month, year)
+    return startdate
 
+def getenddate():
+    
     date_entry = input('Enter the end date in DD-MM-YYYY format: ')
     year, month, day = map(int, date_entry.split('-'))
-    date2 = datetime.date(day, month, year)
+    enddate = datetime.date(day, month, year)
+    return enddate
 
+def date_factor():
+    
+    startdate=getstartdate()
+    enddate=getenddate()
+    num = (360 * (enddate.year - startdate.year) + (30*(enddate.month - startdate.month) + (enddate.day - startdate.day)))
+    yearfrac = num / 360
+    return yearfrac
 
-    date1 = datetime.date(d1year, d1month, d1day)
-
-    date2 = datetime.date(d2year, d2month, d2day)
-
-data()
-
-def yearfrac(date1, date2):
-
-    num = (360 * (date2.year - date1.year) + (30*(date2.month - date1.month) + (date2.day - date1.day)))
-    return num / 360
-
-yearfrac(date1, date2)
-
-def ifp():
-
-    ifp = (endvalue/startvalue)**(1/yearfrac(date1, date2))
-
-    print("The investment fund's performance is: ", ifp)
-
-ifp()
-
+def calc():
+    
+    startvalue=getstartvalue()
+    endvalue=getendvalue()
+    yearf=date_factor()
+    
+    ifp=((endvalue/startvalue)**(1/(yearf))-1)*100
+    
+    print(f"Your investment has grown by a compound annual growth rate of {ifp}%")
+    
+calc()
