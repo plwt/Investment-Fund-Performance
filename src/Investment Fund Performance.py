@@ -36,6 +36,14 @@ def getyearfrac():
     
     # Calculates the fraction of the year represented by the number of whole days between the start and end dates
     
+    # maybe replace with:
+    
+    #from datetime import date
+    #d0 = date(2017, 8, 18)
+    #d1 = date(2017, 10, 26)
+    #delta = d1 - d0
+    #print(delta.days)
+    
     startdate=getstartdate()
     enddate=getenddate()
     num = (360 * (enddate.year - startdate.year) + (30*(enddate.month - startdate.month) + (enddate.day - startdate.day)))
