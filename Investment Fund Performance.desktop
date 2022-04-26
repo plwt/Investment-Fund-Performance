@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Investment Fund Performance
+Comment=Calculates compound annual growth for Linux
+Exec=/usr/bin/x-terminal-emulator -e "/opt/Investment Fund Performance/src/Investment Fund Performance.sh"
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/Investment Fund Performance/src/icon.png
+Categories=GNOME;GTK;Development;
+Name[en_GB]=Investment Fund Performance
