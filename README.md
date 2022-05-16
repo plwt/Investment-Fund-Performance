@@ -1,3 +1,3 @@
 # Investment-Fund-Performance
 
-Calculates compound annual growth for Linux
+Calculates compound annual growth.
